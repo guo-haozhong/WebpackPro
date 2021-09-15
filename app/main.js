@@ -1,2 +1,3 @@
-const show = require('./show');
+require('./main.css');
+const show = require('./show.js');
 show('Webpackdemo');
