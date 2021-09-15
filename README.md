@@ -1,5 +1,6 @@
 # webpack的使用总结
 * 入口(entry)
+
 入口起点(entry point) 指示 webpack 应该使用哪个模块，来作为构建其内部 依赖图(dependency graph) 的开始。
 
 默认值是 ./src/index.js，但你可以通过在 webpack configuration 中配置 entry 属性，来指定一个（或多个）不同的入口起点。例如：
@@ -10,6 +11,7 @@ module.exports = {
 };
 ```
 * 输出(output)
+
 output 属性告诉 webpack 在哪里输出它所创建的 bundle，以及如何命名这些文件。主要输出文件的默认值是 ./dist/main.js，其他生成文件默认放置在 ./dist 文件夹中。
 
 你可以通过在配置中指定一个 output 字段，来配置这些处理过程：
@@ -28,7 +30,9 @@ module.exports = {
 webpack开箱即用的能力是解析JavaScript 和 JSON 文件.loader 让 webpack 能够去处理其他类型的文件，并将它们转换为有效 模块，以供应用程序使用，以及被添加到依赖图中.
 
 loader 有两个属性：
+
 1、test 属性，识别出哪些文件会被转换。
+
 2、use 属性，定义出在进行转换时，应该使用哪个 loader。
 
 ```
@@ -44,6 +48,7 @@ module.exports = {
 };
 ```
 * 插件(plugin)
+
 loader 用于转换某些类型的模块，而插件则可以用于执行范围更广的任务。包括：打包优化，资源管理，注入环境变量。
 
 ```

@@ -1,0 +1,24 @@
+{
+  "name": "webpackpro",
+  "version": "1.0.0",
+  "description": "webpack使用示例",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guo-haozhong/WebpackPro.git"
+  },
+  "author": "hozan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guo-haozhong/WebpackPro/issues"
+  },
+  "homepage": "https://github.com/guo-haozhong/WebpackPro#readme",
+  "devDependencies": {
+    "webpack": "^5.52.1",
+    "webpack-cli": "^4.8.0"
+  }
+}

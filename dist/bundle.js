@@ -1,0 +1,1 @@
+(()=>{var e={629:e=>{e.exports=function(e){window.document.getElementById("app").innerText="hello-"+e}}},r={};!function t(o){var n=r[o];if(void 0!==n)return n.exports;var p=r[o]={exports:{}};return e[o](p,p.exports,t),p.exports}(629)("Webpackdemo")})();
