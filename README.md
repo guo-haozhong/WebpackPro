@@ -10,6 +10,15 @@ module.exports = {
   entry: './path/to/my/entry/file.js',
 };
 ```
+
+* module
+
+模块，在 Webpack里一切皆模块，一个模块对应一个文件。 Webpack 会从配置的 Entry 开始递归找出所有依赖的模块
+
+* Chunk
+
+代码块，一个Chunk由多个模块组合而成，用于代码合并与分割。
+
 * 输出(output)
 
 output 属性告诉 webpack 在哪里输出它所创建的 bundle，以及如何命名这些文件。主要输出文件的默认值是 ./dist/main.js，其他生成文件默认放置在 ./dist 文件夹中。
@@ -26,8 +35,9 @@ module.exports = {
   },
 };
 ```
+
 * loader
-webpack开箱即用的能力是解析JavaScript 和 JSON 文件.loader 让 webpack 能够去处理其他类型的文件，并将它们转换为有效 模块，以供应用程序使用，以及被添加到依赖图中.
+webpack开箱即用的能力是解析JavaScript 和 JSON 文件.loader 让 webpack 能够去处理其他类型的文件，并将它们转换为有效的模块，以供应用程序使用，以及被添加到依赖图中.
 
 loader 有两个属性：
 
@@ -47,6 +57,7 @@ module.exports = {
   },
 };
 ```
+
 * 插件(plugin)
 
 loader 用于转换某些类型的模块，而插件则可以用于执行范围更广的任务。包括：打包优化，资源管理，注入环境变量。
@@ -80,4 +91,11 @@ Webpack 5 运行于 Node.js v10.13.0+ 的版本
 * 内部原理
 https://webpack.docschina.org/concepts/under-the-hood/
 
+```
+Webpack 在启动后会从Entry里配置的 Module 开始，递归解析 Entry 依赖的所有 Module。
+每找到一个 Module ，就会根据配置的 Loader 去找出对应的转换规则，对 Module 进行转换后，
+再解析出当前 Module 依赖的 Module 这些模块会以Entry为单位进行分组，一个Entry及其
+所有依赖的 Module 被分到一个组也就是 Chunk 。最后， Webpack会将所有 Chunk 转换成
+文件输出。在整个流程中，Webpack会在恰当的时机执行Plugin定义的逻辑。
+```
 > 参考链接：https://webpack.docschina.org/
